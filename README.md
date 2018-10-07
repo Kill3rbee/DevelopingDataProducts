@@ -7,5 +7,7 @@ The Shiny Application can be found on the following landing pad: [vFeed - The Co
 
 [Google](https://google.com" target="_blank)
 
+<a href="http://example.com/" target="_blank">Hello, world!</a>
+
 
 
