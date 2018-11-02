@@ -5,7 +5,7 @@ library(dplyr)
 library(rCharts)
 library(data.table)
 # Read data
-mapCVEEXPLOIT <- readRDS("mapCVEEXPLOIT.rds")
+mapCVEEXPLOIT <- readRDS("data/mapCVEEXPLOIT.rds")
 
 #saveRDS(mapCVEEXPLOIT, file="mapCVEEXPLOIT.rds")
 #setnames(mapCVEEXPLOIT, "cwetitle", "title")
@@ -13,6 +13,7 @@ mapCVEEXPLOIT <- readRDS("mapCVEEXPLOIT.rds")
 #setnames(mapCVEEXPLOIT, "date_publishedYear", "year")
 cwetitles <- sort(unique(mapCVEEXPLOIT$cwetitle))
 wascnames <- sort(unique(mapCVEEXPLOIT$wascname))
+#cveNames <- names(mapCVEEXPLOIT)
 #years <- sort(unique(mapCVEEXPLOIT$year))
 #risk <- sort(unique(mapCVEEXPLOIT$risk))
 
@@ -146,7 +147,7 @@ cveToDisplay <- function(cvedata) {
   result <-cvedata %>% 
     #filter(year >= minYear, year <= maxYear,
     #       risk >= minRisk, risk <= maxRisk,cwetitle %in% cwetitles)%>%
-    select(cveid, risk, year, wascname,cwetitle, summary, exploitdbscripturl)
+    select(cveid, risk, year, wascname,cwetitle, summary, exploitdburl)
   return(result)
 }
 
